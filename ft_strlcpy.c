@@ -6,7 +6,7 @@
 /*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:20:19 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/06 14:59:08 by dmazari          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:19:17 by dmazari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,31 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dst || !src)
-		return (0);
 	i = 0;
 	if (size != 0)
 	{
-		while (i < size - 1)
+		while (i < size - 1 && src[i])
 		{
 			dst[i] = src[i];
 			i++;
 		}
-		dst[i] = '\0';
 	}
+	dst[i] = '\0';
 	return (ft_strlen(src));
 }
+
+/* #include <string.h>
+#include <bsd/string.h>
+#include <stdio.h>
+
+int main()
+{
+	char	dst[20];
+	char	*src = "salut c'est cool";
+	char	dst1[20];
+	char	*src1 = "salut c'est cool";
+	size_t	i = ft_strlcpy(dst, src, 20);
+	size_t	i1 = strlcpy(dst1, src1, 20);
+
+	printf("%s \n %zu \n %s \n %zu", dst, i, dst1, i1);
+} */

@@ -6,7 +6,7 @@
 /*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:31:15 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/06 14:39:03 by dmazari          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:16:02 by dmazari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,32 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i_src = ft_strlen(src);
 	i_dst = ft_strlen(dst);
 	i = 0;
-	while (i < size - 1)
+	if (size != 0)
 	{
-		dst[i_dst + i] = src[i];
-		i++;
+		while (i < size - 1 && src[i])
+		{
+			dst[i_dst + i] = src[i];
+			i++;
+		}
+		dst[i_dst + i] = '\0';
 	}
-	dst[i_dst + i] = '\0';
 	return (i_dst + i_src);
 }
+/* #include <string.h>
+#include <bsd/string.h>
+#include <stdio.h>
+
+
+int main ()
+{
+	// char dst[20] = "";
+	char	*dst = NULL;
+	char dst1[20] = "";
+	char *src = "salut les loulous";
+	char *src1 = "salut les loulous";
+	printf("%s\n", dst);
+	size_t	i = strlcat(dst, src1, 4);
+	size_t	i1 = ft_strlcat(dst1, src, 4);
+	
+	printf("%s \n %zu \n %s \n %zu", dst, i1, dst1, i);
+} */

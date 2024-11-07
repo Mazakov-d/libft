@@ -6,7 +6,7 @@
 /*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:38:06 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/06 17:51:28 by dmazari          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:20:33 by dmazari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (temp_s[i] == (unsigned char)c)
 			return ((void *)(s + i));
-		s++;
+		i++;
 	}
 	return ((void *)(s + i));
 }
