@@ -6,7 +6,7 @@
 /*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:18:20 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/07 17:43:11 by dmazari          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:48:23 by dmazari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,46 @@ static int	ft_search(char const *set, char c)
 	return (0);
 }
 
+static size_t	ft_start(char const *s1, char const *set)
+{
+	size_t	start;
+
+	start = 0;
+	while (s1[start] && ft_search(set, s1[start]) == 1)
+		start++;
+	return (start);
+}
+
+static size_t	ft_end(char const *s1, char const *set)
+{
+	size_t	end;
+
+	end = ft_strlen(s1) - 1;
+	while (s1[end] && ft_search(set, s1[end]) == 1 && end > 0)
+		end--;
+	return (end);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
+	size_t	start;
+	size_t	end;
 	size_t	i;
-	size_t	j;
 
 	if (!set)
-		return (s1);
-	str = malloc(ft_strlen(s1) + 1);
+		return ((char *)s1);
+	start = ft_start(s1, set);
+	end = ft_end(s1, set);
+	str = malloc(end - start + 2);
 	if (!str)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s1[j])
+	while (s1[start + i] && start + i <= end)
 	{
-		if (ft_search(set, s1[j]) == 0)
-		{
-			str[i] = s1[j];
-			i++;
-		}
-		j++;
+		str[i] = s1[start + i];
+		i++;
 	}
-	str[i] = '\0';
+	str[i] = 0;
 	return (str);
 }
