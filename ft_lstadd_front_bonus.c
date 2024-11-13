@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
+/*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:00:18 by dorianmazar       #+#    #+#             */
-/*   Updated: 2024/11/12 01:15:21 by dorianmazar      ###   ########.fr       */
+/*   Updated: 2024/11/13 13:53:22 by dmazari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
