@@ -3,69 +3,91 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:52:50 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/08 17:29:48 by dmazari          ###   ########.fr       */
+/*   Updated: 2024/11/11 11:51:07 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_nb(int n)
+static size_t	ft_count(int n)
 {
-	int		count;
-	char	*nb;
-
-	count = 0;
-	if (n <= 0)
-		count++;
-	while (n != 0)
-	{
-		n = n / 10;
-		count++;
-	}
-	nb = malloc(count + 1);
-	if (!nb)
-		return (NULL);
-	return (nb);
-}
-
-int	ft_count(int n)
-{
-	int	count;
+	size_t	count;
 
 	count = 0;
 	if (n == 0)
+		return (0);
+	if (n < 0)
 		count++;
 	while (n != 0)
 	{
-		n = n / 10;
 		count++;
+		n = n / 10;
 	}
 	return (count);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_create(int n)
 {
-	char	*nb;
-	int		count;
+	char	*nbr;
+	size_t	count;
 
-	nb = ft_nb(n);
-	if (!nb)
-		return (NULL);
-	count = ft_count(n);
+	count = 0;
+	if (n == 0)
+	{
+		nbr = malloc(2);
+		if (!nbr)
+			return (NULL);
+	}
+	else
+	{
+		count = ft_count(n);
+		nbr = malloc(sizeof(char) * count + 1);
+		if (!nbr)
+			return (NULL);
+	}
+	return (nbr);
+}
+
+static void	ft_fill(char *nbr, int count, int n)
+{
+	unsigned int	nb;
+
+	nbr[count] = 0;
 	if (n < 0)
 	{
-		*nb = '-';
-		nb++;
+		nbr[0] = '-';
+		nb = -n;
 	}
-	while (count > 0)
+	else
+		nb = n;
+	while (nb != 0)
 	{
-		*nb = '0' + ((n / (10 * count)) % 10);
 		count--;
-		nb++;
+		nbr[count] = '0' + (nb % 10);
+		nb = nb / 10;
 	}
-	*nb = 0;
-	return (nb);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*nbr;
+	int		count;
+
+	count = ft_count(n);
+	nbr = ft_create(n);
+	if (!nbr)
+		return (NULL);
+	if (n == 0)
+	{
+		nbr[0] = '0';
+		nbr[1] = 0;
+	}
+	else
+	{
+		ft_fill(nbr, count, n);
+	}
+	return (nbr);
 }

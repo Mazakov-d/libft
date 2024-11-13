@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:13:27 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/06 15:27:13 by dmazari          ###   ########.fr       */
+/*   Updated: 2024/11/11 15:57:58 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == c % 256)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if (c % 256 == '\0')
 		return ((char *)s);
 	return (NULL);
 }

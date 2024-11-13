@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 17:38:06 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/12 00:03:37 by dorianmazar      ###   ########.fr       */
+/*   Created: 2024/11/11 13:50:07 by dorianmazar       #+#    #+#             */
+/*   Updated: 2024/11/11 14:49:17 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t			i;
-	unsigned char	*temp_s;
+	t_list	*result;
 
-	temp_s = (unsigned char *)s;
-	i = 0;
-	if (n > 0)
-	{
-		while (i < n)
-		{
-			if (temp_s[i] == (unsigned char)c)
-				return ((void *)(s + i));
-			i++;
-		}
-		if ((unsigned char)c == 0 && n >= ft_strlen(s))
-			return ((void *)(s + ft_strlen(s)));
-	}
-	return (NULL);
+	result = malloc(sizeof(t_list) * 1);
+	if (!result)
+		return (NULL);
+	result[0].content = content;
+	result[0].next = NULL;
+	return (result);
 }

@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 17:38:06 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/12 00:03:37 by dorianmazar      ###   ########.fr       */
+/*   Created: 2024/11/11 11:59:19 by dorianmazar       #+#    #+#             */
+/*   Updated: 2024/11/11 12:11:29 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-	unsigned char	*temp_s;
-
-	temp_s = (unsigned char *)s;
-	i = 0;
-	if (n > 0)
-	{
-		while (i < n)
-		{
-			if (temp_s[i] == (unsigned char)c)
-				return ((void *)(s + i));
-			i++;
-		}
-		if ((unsigned char)c == 0 && n >= ft_strlen(s))
-			return ((void *)(s + ft_strlen(s)));
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }
