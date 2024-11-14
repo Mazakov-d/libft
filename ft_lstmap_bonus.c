@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmazari <dmazari@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:39:23 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/13 15:06:57 by dmazari          ###   ########.fr       */
+/*   Updated: 2024/11/14 15:16:16 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*save_clear;
 	t_list	*save_new;
 	t_list	*new;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	save_clear = lst;
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
