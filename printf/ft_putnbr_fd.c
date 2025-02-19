@@ -6,11 +6,11 @@
 /*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:15:05 by dorianmazar       #+#    #+#             */
-/*   Updated: 2024/11/11 16:18:40 by dorianmazar      ###   ########.fr       */
+/*   Updated: 2025/02/18 23:45:55 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

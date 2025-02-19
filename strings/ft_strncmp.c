@@ -6,11 +6,11 @@
 /*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:26:21 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/11 16:19:59 by dorianmazar      ###   ########.fr       */
+/*   Updated: 2025/02/18 23:43:33 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

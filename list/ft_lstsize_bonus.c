@@ -6,11 +6,11 @@
 /*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 14:45:41 by dorianmazar       #+#    #+#             */
-/*   Updated: 2024/11/11 14:57:34 by dorianmazar      ###   ########.fr       */
+/*   Updated: 2025/02/18 23:47:00 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

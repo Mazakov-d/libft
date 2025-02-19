@@ -6,11 +6,11 @@
 /*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:59:19 by dorianmazar       #+#    #+#             */
-/*   Updated: 2024/11/11 12:11:29 by dorianmazar      ###   ########.fr       */
+/*   Updated: 2025/02/18 23:45:45 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

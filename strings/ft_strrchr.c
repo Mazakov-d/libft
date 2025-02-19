@@ -6,11 +6,11 @@
 /*   By: dorianmazari <dorianmazari@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:32:04 by dmazari           #+#    #+#             */
-/*   Updated: 2024/11/12 00:12:52 by dorianmazar      ###   ########.fr       */
+/*   Updated: 2025/02/18 23:43:41 by dorianmazar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
